@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_routes_and_navigations/screens/second_screen.dart';
+import 'package:flutter_routes_and_navigations/screens/third_screen.dart';
 
 import 'screens/first_screen.dart';
 
@@ -17,7 +19,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FirstScreen(),
+      home: const HomeScreen(),
+      initialRoute: HomeScreen.routeName,
+      routes: {
+        HomeScreen.routeName: (context) => const HomeScreen(),
+        SecondScreen.routeName: (context) =>
+            const SecondScreen(data: "Hey, I'm second screen"),
+        ThirdScreen.routeName: (context) =>
+            const ThirdScreen(data: "Hey, I'm third screen"),
+      },
     );
   }
 }

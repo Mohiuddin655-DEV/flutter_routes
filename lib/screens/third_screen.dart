@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
-import 'third_screen.dart';
+class ThirdScreen extends StatelessWidget {
+  static const String routeName = "/third_screen";
 
-class SecondScreen extends StatelessWidget {
-  static const String routeName = "/second_screen";
-
-  const SecondScreen({Key? key, required this.data}) : super(key: key);
+  const ThirdScreen({Key? key, required this.data}) : super(key: key);
 
   final String data;
 
@@ -13,7 +11,7 @@ class SecondScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Second"),
+        title: const Text("Third"),
       ),
       body: SafeArea(
         child: Center(
@@ -21,7 +19,7 @@ class SecondScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Second Screen",
+                "Third Screen",
                 style: TextStyle(
                   fontSize: 24,
                   color: Colors.black,
@@ -39,19 +37,16 @@ class SecondScreen extends StatelessWidget {
               const SizedBox(height: 50),
               MaterialButton(
                 onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    ThirdScreen.routeName,
-                  );
+                  Navigator.pop(context);
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
                 color: Colors.blue,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                 child: Text(
-                  "Next".toUpperCase(),
+                  "Back".toUpperCase(),
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

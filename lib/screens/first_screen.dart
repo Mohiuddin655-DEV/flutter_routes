@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_routes_and_navigations/screens/second_screen.dart';
 
-import 'second_screen.dart';
+class HomeScreen extends StatelessWidget {
+  static const String routeName = "/home";
 
-class FirstScreen extends StatelessWidget {
-  const FirstScreen({Key? key}) : super(key: key);
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +19,7 @@ class FirstScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                "Second Screen",
+                "Home Screen",
                 style: TextStyle(
                   fontSize: 24,
                   color: Colors.black,
@@ -36,12 +37,9 @@ class FirstScreen extends StatelessWidget {
               const SizedBox(height: 50),
               MaterialButton(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushNamed(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) =>
-                          const SecondScreen(data: "Hey, I'm second screen."),
-                    ),
+                    SecondScreen.routeName,
                   );
                 },
                 shape: RoundedRectangleBorder(
@@ -49,9 +47,9 @@ class FirstScreen extends StatelessWidget {
                 ),
                 color: Colors.blue,
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                    const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
                 child: Text(
-                  "Back to the first page".toUpperCase(),
+                  "Next".toUpperCase(),
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
