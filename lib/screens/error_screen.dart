@@ -1,37 +1,35 @@
 import 'package:flutter/material.dart';
 
-import 'third_screen.dart';
+class ErrorScreen extends StatelessWidget {
+  static const String routeName = "/error_screen";
 
-class SecondScreen extends StatelessWidget {
-  static const String routeName = "/second_screen";
+  const ErrorScreen({Key? key, required this.error}) : super(key: key);
 
-  const SecondScreen({Key? key, required this.data}) : super(key: key);
-
-  final String data;
+  final String error;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Second"),
+        title: const Text("Error"),
       ),
       body: SafeArea(
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Second Screen",
-                style: TextStyle(
+              Text(
+                error,
+                style: const TextStyle(
+                  color: Colors.grey,
                   fontSize: 24,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w100,
                 ),
               ),
               const SizedBox(height: 8),
-              Text(
-                data,
-                style: const TextStyle(
+              const Text(
+                "Go back your home!",
+                style: TextStyle(
                   color: Colors.grey,
                   fontSize: 16,
                 ),
@@ -39,11 +37,7 @@ class SecondScreen extends StatelessWidget {
               const SizedBox(height: 50),
               MaterialButton(
                 onPressed: () {
-                  Navigator.pushNamed(
-                    context,
-                    ThirdScreen.routeName,
-                      arguments: "Hey, I'm Third Page."
-                  );
+                  Navigator.pop(context);
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -52,7 +46,7 @@ class SecondScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 50, vertical: 16),
                 child: Text(
-                  "Next".toUpperCase(),
+                  "Back".toUpperCase(),
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

@@ -10,7 +10,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
         title: const Text("Home"),
       ),
       body: SafeArea(
@@ -40,6 +39,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.pushNamed(
                     context,
                     SecondScreen.routeName,
+                    arguments: "Hey, I'm Second Page.",
                   );
                 },
                 shape: RoundedRectangleBorder(

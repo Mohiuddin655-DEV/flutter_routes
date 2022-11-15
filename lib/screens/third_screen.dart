@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'error_screen.dart';
+
 class ThirdScreen extends StatelessWidget {
   static const String routeName = "/third_screen";
 
@@ -37,7 +39,10 @@ class ThirdScreen extends StatelessWidget {
               const SizedBox(height: 50),
               MaterialButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.pushNamed(
+                    context,
+                    ErrorScreen.routeName,
+                  );
                 },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
@@ -46,7 +51,7 @@ class ThirdScreen extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
                 child: Text(
-                  "Back".toUpperCase(),
+                  "Next".toUpperCase(),
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
